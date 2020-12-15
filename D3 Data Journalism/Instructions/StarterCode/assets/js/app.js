@@ -51,18 +51,6 @@ d3.csv("assets/data/data.csv").then( data =>{
 	var yAxis = chartGroup.append('g')
 		.call(yAxis);
 
-    //chartGroup.append("text")
-        //.attr("transform", `translate(${width - 40},${height - 5})`)
-        //.attr("class", "axis-text-main")
-        //.text("Demographics")
-
-    //chartGroup.append("text")
-        //.attr("transform", `translate(15,60 )rotate(270)`)
-        //.attr("class", "axis-text-main")
-        //.text(" Risk Factors")
-
-
-
 	var stateCircles = chartGroup.selectAll('circle')
 		.data(data)
 		.enter()
@@ -70,7 +58,7 @@ d3.csv("assets/data/data.csv").then( data =>{
 		.classed('stateCircle',true)
 		.attr('cx', d => xScale(d[chosenXAxis]))
 		.attr('cy', d => yScale(d[chosenYAxis]))
-		.attr('r' , 15)
+		.attr('r' , 14)
         .attr("opacity", "1")
      
 	
@@ -154,12 +142,12 @@ d3.csv("assets/data/data.csv").then( data =>{
 			        .on('start',function(){
 			        	d3.select(this)
 			        		.attr("opacity", 1)
-			        		.attr('r',15);
+			        		.attr('r',14);
 			        })
 			        .on('end',function(){
 			        	d3.select(this)
 			        		.attr("opacity", 1)
-			        		.attr('r',15)
+			        		.attr('r',14)
 			        })
 			        .attr('cx', d => xScale(d[chosenXAxis]));
 
